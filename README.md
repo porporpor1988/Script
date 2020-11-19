@@ -27,3 +27,5 @@ $ ssh-copy-id jenkins@localhost
 ssh jenkins@192.168.7.8
 ssh jenkins@localhost
 
+เสร็จแล้วไปรันสคริป Jenkins-install.ssh
+
