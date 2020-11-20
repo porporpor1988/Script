@@ -1,22 +1,21 @@
 #!/bin/bash
-# ก่อนจะรันสริปให้สวิช user เป็น root ด้วยคำสั่งนี้ sudo su -
 #nmtui
 #init 6
-rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
-yum install -y wget
-wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
-yum repolist
-yum install -y jenkins
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo yum install -y wget
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo yum repolist
+sudo yum install -y jenkins
 
-systemctl start jenkins && systemctl enable jenkins
-systemctl status jenkins
-systemctl status firewall-cmd
-systemctl status firewalld
+sudo systemctl start jenkins && systemctl enable jenkins
+sudo systemctl status jenkins
+sudo systemctl status firewall-cmd
+sudo systemctl status firewalld
 
-yum install -y telnet  net-tools git
-firewall-cmd --permanent --add-port=8080/tcp
-semanage port -a -t http_port_t -p tcp 8080
-firewall-cmd --reload
+sudo yum install -y telnet  net-tools git
+sudo firewall-cmd --permanent --add-port=8080/tcp
+sudo semanage port -a -t http_port_t -p tcp 8080
+sudo firewall-cmd --reload
 
 cat /var/lib/jenkins/secrets/initialAdminPassword
 
