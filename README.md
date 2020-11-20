@@ -10,7 +10,7 @@ visudo
 jenkins ALL=(ALL)       NOPASSWD: ALL 
 thanaporn ALL=(ALL)       NOPASSWD: ALL 
 
-SSH Key
+# SSH Key
 ให้เราทำ ssh key ที่เครื่อง jenkins แล้วส่งไปยังเครื่องปลายทาง (gitlab, docker)
 เราจะสร้าง ssh key ด้วย user jenkins ทีเราพึ่งสร้างมา
 # su - jenkins
@@ -27,9 +27,10 @@ $ ssh-copy-id jenkins@localhost
 ssh jenkins@192.168.7.8
 ssh jenkins@localhost
 
->>>>>>>>>>>>  เสร็จแล้วไปรันสคริป Jenkins-install.ssh
+
+# เสร็จแล้วไปรันสคริป Jenkins-install.ssh
 
 
-วิธีเช็ค version  Jenkins
+# วิธีเช็ค version  Jenkins
 cat /var/lib/jenkins/config.xml
 
